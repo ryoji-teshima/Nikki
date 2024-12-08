@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>教科別進捗表</title>
+</head>
+<body>
+    <h1>教科別進捗表</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>教科</th>
+                <th>できた</th>
+                <th>できなかった</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if data %}
+                {% for subject, results in data.items() %}
+                <tr>
+                    <td>{{ subject }}</td>
+                    <td>
+                        <ul>
+                            {% for item in results['できた'] %}
+                            <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            {% for item in results['できなかった'] %}
+                            <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="3">データがありません。</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+    <a href="/">入力フォームに戻る</a>
+</body>
+</html>

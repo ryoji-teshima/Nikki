@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>日記進捗管理</title>
+</head>
+<body>
+    <h1>日記進捗管理</h1>
+    <form method="POST">
+        <label for="date">日付:</label>
+        <input type="date" id="date" name="date" required>
+        <br>
+        <label for="subject">教科名:</label>
+        <input type="text" id="subject" name="subject" required>
+        <br>
+        <label for="topic">分野:</label>
+        <input type="text" id="topic" name="topic" required>
+        <br>
+        <label for="status">できた/できなかった:</label>
+        <select id="status" name="status">
+            <option value="できた">できた</option>
+            <option value="できなかった">できなかった</option>
+        </select>
+        <br>
+        <button type="submit">保存</button>
+    </form>
+    <p>{{ message }}</p>
+    <a href="/table">表を表示</a>
+</body>
+</html>
